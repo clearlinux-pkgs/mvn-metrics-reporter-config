@@ -4,10 +4,13 @@
 #
 Name     : mvn-metrics-reporter-config
 Version  : 3.0.0
-Release  : 1
+Release  : 2
 URL      : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.jar
 Source0  : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.jar
-Source1  : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.pom
+Source1  : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config-base/3.0.0/reporter-config-base-3.0.0.jar
+Source2  : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config-base/3.0.0/reporter-config-base-3.0.0.pom
+Source3  : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config-parent/3.0.0/reporter-config-parent-3.0.0.pom
+Source4  : http://repo1.maven.org/maven2/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -35,8 +38,17 @@ data components for the mvn-metrics-reporter-config package.
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0
 cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.jar
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.0
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.0/reporter-config-base-3.0.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.0
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.0/reporter-config-base-3.0.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-parent/3.0.0
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-parent/3.0.0/reporter-config-parent-3.0.0.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.pom
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.pom
 
 
 %files
@@ -44,5 +56,8 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/addthis/metrics/rep
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.0/reporter-config-base-3.0.0.jar
+/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-base/3.0.0/reporter-config-base-3.0.0.pom
+/usr/share/java/.m2/repository/com/addthis/metrics/reporter-config-parent/3.0.0/reporter-config-parent-3.0.0.pom
 /usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.jar
 /usr/share/java/.m2/repository/com/addthis/metrics/reporter-config3/3.0.0/reporter-config3-3.0.0.pom
